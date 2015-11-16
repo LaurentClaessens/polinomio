@@ -1,5 +1,7 @@
 /*INCLUSIONE DELLA CLASSE DERIVATA IOSTREAM: IOS -> ISTREAM, OSTREAM -> IOSTREAM*/
 #include <iostream>
+#include "smartp.h"
+
 using std::ostream;
 using std::endl;
 
@@ -26,6 +28,7 @@ class polynom{
     };
     /*COSTRUTTORI E DISTRUTTORI*/
     polynom(smartp =0); //costruttore standard e a 1 parametro
+    polynom(const int x);
     polynom(const smartp&); //costruttore di copia
     polynom( int coef,int expo); 
     ~polynom(); //distruttore
