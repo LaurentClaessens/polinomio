@@ -7,7 +7,7 @@ polynomial::polynomial(int coef,int expo)
     first=m_ptr;
 }
 
-
+polynomial::polynomial(smartp sp): first(sp){}
 
 /* About iterator */
 
@@ -29,7 +29,7 @@ polynomial::iterator operator++(int)   //itr++
 
 polynomial::polynomial(const int c)
 {
-    m=Monomio(c,0);
+    m=monomio(c,0);
     first=smartp(m);
 }
 
@@ -40,7 +40,6 @@ polynomial::iterator polynomial::end() const
     aux.index=0;
     return aux;
 }
->>>>>>> 46b30ea3792083fbb1cdb7d470279e54562f28df
 
 /* Mathematical operations */
 

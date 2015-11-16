@@ -2,7 +2,6 @@
 #include <iostream>
 #include "smartp.h"
 
->>>>>>> 46b30ea3792083fbb1cdb7d470279e54562f28df
 using std::ostream;
 using std::endl;
 
@@ -27,7 +26,7 @@ class polynomial{
                 polynomial operator[](iterator it);
             };
         /*COSTRUTTORI E DISTRUTTORI*/
-        polynomial(smartp =0); //costruttore standard e a 1 parametro
+        polynomial(smartp); //costruttore standard e a 1 parametro
         polynomial(const int x);
         polynomial(const smartp&); //costruttore di copia
         polynomial( int coef,int expo); 

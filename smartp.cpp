@@ -3,8 +3,8 @@
 /*DEFINIZIONE METODI E COSTRUTTORI DI SMARTP***********************************************************************************************/
 
 /*COSTRUTTORE*/
-smartp::smartp(Monomio *p) : punt(p) {
-    if (punt) //se ho assegnato a punt un Monomio/nodo valido:
+smartp::smartp(monomio *p) : punt(p) {
+    if (punt) //se ho assegnato a punt un monomio/nodo valido:
         punt->riferimenti++; //incremento riferimenti a nodo
     //altrimenti ho inizializzato uno smartp nullo
 }
@@ -27,7 +27,7 @@ smartp::~smartp(){
 /*ASSEGNAZIONE*/
 smartp& smartp::operator=(const smartp& s){
     if (this != &s) {
-        Monomio *t = punt;
+        monomio *t = punt;
         punt = s.punt;
         if (punt) punt->riferimenti++;
         if (t) {
@@ -39,12 +39,12 @@ smartp& smartp::operator=(const smartp& s){
 }
 
 /*OPERATORE DI DEREFERENZIAZIONE*/
-Monomio& smartp::operator*() const{
+monomio& smartp::operator*() const{
     return *punt; //*smartp = *punt ora;
 }
 
 /*OPERATORE DI SELEZIONE DI MEMBRO*/
-Monomio* smartp::operator->() const{
+monomio* smartp::operator->() const{
     return punt; //smartp->membro = punt->membro ora;
 }
 
