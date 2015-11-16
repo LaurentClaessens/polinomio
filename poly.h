@@ -32,6 +32,11 @@ class polynomial{
     polynomial(const smartp&); //costruttore di copia
     polynomial( int coef,int expo); 
     ~polynomial(); //distruttore
+
+
+    /* Mathematical operations */
+    polynomial operaror+(const polynomial& P);
+
     /*METODI COSTANTI (NO SIDE EFFECT)*/
     bool operator==(const polynomial&) const; //ridefinizione uguaglianza
     bool operator!=(const polynomial&) const; //ridefinizione disuguaglianza

@@ -3,5 +3,5 @@
 
 int main(int argc, char *argv[])
 {
-    P=polynom(3,2);
+    P=polynomial(3,2);
 }
