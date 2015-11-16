@@ -21,3 +21,4 @@ polynom::polynom(int c)
 }
 
 polynom::begin() {return polynom::iterator(first);}
+
