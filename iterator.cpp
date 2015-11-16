@@ -37,5 +37,5 @@ iterator Polynomial::iterator::end() const{
 }
 
 Polynomial Polynomial::iterator::operator[](iterator it){
-    return it.index->info; //non conosco l'interfaccia di monomio ???????
+    return it.index->info; //non conosco l'interfaccia di Monomio ???????
 }

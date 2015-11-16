@@ -1,9 +1,9 @@
 #include "poly.h"
-#include "monomio.h"
+#include "Monomio.h"
 
 Polynomial::Polynomial(int coef,int expo)
 {
-    monomio* m_ptr = new monomio(coef,expo); 
+    Monomio* m_ptr = new Monomio(coef,expo); 
     first=m_ptr;
 }
 
@@ -29,7 +29,7 @@ Polynomial::iterator operator++(int)   //itr++
 
 Polynomial::Polynomial(const int c)
 {
-    m=monomio(c,0);
+    m=Monomio(c,0);
     first=smartp(m);
 }
 
@@ -43,6 +43,7 @@ Polynomial::iterator Polynomial::end() const
 
 /* Mathematical operations */
 
+int Polynomial::degree(){ return first->grado; }
 Polynomial Polynomial::operator+(const Polynomial& P)
     // return the sum of 'this' and P
 {

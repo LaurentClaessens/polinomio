@@ -9,7 +9,7 @@ using std::endl;
 
 class Polynomial{
     private:
-        smartp first;
+        smartp first;               // 'first' points to the *highest* degree monomial.
     public:
         class iterator {
             private:
@@ -34,6 +34,7 @@ class Polynomial{
 
 
         /* Mathematical operations */
+        int degree();   // return the degree of the polynomial
         Polynomial operator+(const Polynomial& P);
 
         /*METODI COSTANTI (NO SIDE EFFECT)*/
