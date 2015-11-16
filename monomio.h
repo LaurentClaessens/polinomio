@@ -1,6 +1,7 @@
 #ifndef  __MONOMIO_H__
 #define  __MONOMIO_H__
 
+#include "coefficiente.h"
 
 class monomio
 {
