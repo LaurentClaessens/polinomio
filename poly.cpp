@@ -1,3 +1,9 @@
+polynom::polynom(int coef,int expo)
+{
+    m* = new monomio(coeff,expo); 
+}
+
+
 polynom::iterator(smartp ptr) mono_ptr(ptr) { }; 
 
 polynom::iterator& operator++()  // ++itr 
@@ -5,7 +11,6 @@ polynom::iterator& operator++()  // ++itr
     if (mono_ptr) mono_ptr=mono_ptr->next;
     return *this;
 }
-
 
 polynom::iterator operator++(int)   //itr++
 {
@@ -20,5 +25,5 @@ polynom::polynom(int c)
     first=smartp(m);
 }
 
-polynom::begin() {return polynom::iterator(first);}
+polynom::begin() const {return polynom::iterator(first);}
 

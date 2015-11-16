@@ -16,6 +16,7 @@ class polynom{
     };
     /*COSTRUTTORI E DISTRUTTORI*/
     polynom(smartp f=0); //costruttore standard e a 1 parametro
+    polynom( int coef,int expo); 
     polynom(const smartp &); //costruttore di copia
     ~polynom(); //distruttore
     /*METODI COSTANTI (NO SIDE EFFECT)*/
@@ -32,6 +33,3 @@ class polynom{
 
 
 };
-
-
-
