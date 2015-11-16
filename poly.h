@@ -1,5 +1,6 @@
 /*INCLUSIONE DELLA CLASSE DERIVATA IOSTREAM: IOS -> ISTREAM, OSTREAM -> IOSTREAM*/
 #include <iostream>
+#include <smartp.h>
 using std::ostream;
 using std::endl;
 
@@ -14,6 +15,7 @@ class polynom{
         smartp index;
     public:
         /*notare la sottile differenza tra increment prefisso e postfisso*/
+        iterator(smartp first);
         iterator operator++(int); //prefisso
         iterator& operator++(); //postfisso
         bool operator==(iterator it);
@@ -25,14 +27,9 @@ class polynom{
 
     };
     /*COSTRUTTORI E DISTRUTTORI*/
-<<<<<<< HEAD
     polynom(smartp =0); //costruttore standard e a 1 parametro
     polynom(const smartp&); //costruttore di copia
-=======
-    polynom(smartp f=0); //costruttore standard e a 1 parametro
-    polynom( int coef,int expo); 
-    polynom(const smartp &); //costruttore di copia
->>>>>>> c136b083941fb3bce0c25aefaa6285928525e4b9
+    polynom(int coef,int expo);
     ~polynom(); //distruttore
     /*METODI COSTANTI (NO SIDE EFFECT)*/
     bool operator==(const polynom&) const; //ridefinizione uguaglianza
@@ -45,13 +42,4 @@ class polynom{
     friend polynom operator*(const polynom&, const polynom&); //ridefinizione operatore di moltiplicazione tra polinomi (?serve)
     friend polynom operator+(const polynom&, const polynom &); //ridefinizione operatore di somma tra polinomi (?serve)
     friend ostream& operator<<(ostream&, const polynom&); //ridefinizione ostream
-
-
 };
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> c136b083941fb3bce0c25aefaa6285928525e4b9

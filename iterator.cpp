@@ -1,25 +1,32 @@
 #include "poly.h"
 
-/*IMPLEMENTO METODI RELATIVI ALLA CLASSE ITERATOR SULL'OGGETTO POLYNOM*/
+/*IMPLEMENTO METODI RELATIVI ALLA CLASSE ITERATOR SULL'OGGETTO POLYNOM********************************************************************/
 
-iterator operator++(int);
-iterator& operator++(); //postfisso
+polynom::iterator::iterator(smartp first) : index(first) {};
 
+polynom::iterator polynom::iterator::operator++(int)   //it++
+{
+    iterator aux=this;
+    ++this;
+    return aux;
+}
 
+iterator& polynom::iterator::operator++(){ //++it
+    if (index) index = index->next; //non sicuro
+    return *this;
+}
 
 bool polynom::iterator::operator==(iterator it){
-    return
+    return first == it.index;  //non sicuro
 }
 
 bool polynom::iterator::operator!=(iterator it){
-
+    return !(first == it.index);
 }
 
 
-iterator polynom::iterator::begin() const{
-    iterator aux;
-    aux.index = first;
-    return aux;
+polynom::begin() const {
+    return polynom::iterator(first);
 }
 
 iterator polynom::iterator::end() const{

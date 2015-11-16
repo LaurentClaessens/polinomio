@@ -7,7 +7,7 @@ class monomio
         Coefficiente coefficient;
         Exponent exponent;
     public:
-        monomio(int,int)
+        monomio(int,int);
 }
 
 #endif     // __MONOMIO_H__

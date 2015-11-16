@@ -1,22 +1,6 @@
 #include "poly.h"
-polynom::polynom(int coef,int expo)
-{
-    m* = new monomio(coeff,expo); 
-}
 
-
-polynom::iterator(smartp ptr) mono_ptr(ptr) { }; 
-
-
-polynom::iterator operator++(int)   //itr++
-{
-    iterator aux=this;
-    ++this;
-    return aux;
-}
-
-
-polynom::begin() const {return polynom::iterator(first);}
+/*IMPLEMENTO METODI RELATIVI ALLA CLASSE ITERATOR SULL'OGGETTO POLYNOM*/
 
 
 /*IMPLEMENTAZIONE FUNZIONI ESTERNE FRIEND*/
