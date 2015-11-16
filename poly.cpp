@@ -3,7 +3,7 @@
 
 polynomial::polynomial(int coef,int expo)
 {
-    monomio* m_ptr = new monomio(coeff,expo); 
+    monomio* m_ptr = new monomio(coef,expo); 
     first=m_ptr;
 }
 
@@ -34,3 +34,17 @@ polynomial::polynomial(const int c)
 }
 
 polynomial::iterator polynomial::begin() const {return polynomial::iterator(first);}
+polynomial::iterator polynomial::end() const 
+{
+    polynomial::iterator aux;
+    aux.index=0;
+    return aux;
+}
+
+/* Mathematical operations */
+
+polynomial polynomial::operator+(const polynomial& P)
+    // return the sum of 'this' and P
+{
+    // TODO
+}
