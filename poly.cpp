@@ -1,16 +1,27 @@
-
-polynom::iterator& operator++()  // ++itr 
+#include "poly.h"
+polynom::polynom(int coef,int expo)
 {
-    if (mono_ptr) mono_ptr=mono_ptr->next;
-    return *this;
+    m* = new monomio(coeff,expo); 
 }
+
+
+polynom::iterator(smartp ptr) mono_ptr(ptr) { }; 
 
 
 polynom::iterator operator++(int)   //itr++
 {
+    iterator aux=this;
+    ++this;
+    return aux;
 }
 
-polynom::polynom(int c)
-{
 
-}<++>
+polynom::begin() const {return polynom::iterator(first);}
+
+
+/*IMPLEMENTAZIONE FUNZIONI ESTERNE FRIEND*/
+std::ostream& polynom::operator<<(std::ostream&, const polynom& p) {
+    for(iteratore it = p.begin(); it != p.end(); ++it){
+        os<<      //IMPLEM MONOMIO
+    }
+}
