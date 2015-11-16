@@ -8,7 +8,7 @@ public:
     /*COSTRUTTORI && DISTRUTTORE*/
     smartp(Monomio *p=0);
     smartp(const smartp&);
-    ~smartP();
+    ~smartp();
     /*METODI CHE FANNO SIDE EFFECT*/
     smartp& operator=(const smartp&);
     /*METODI CHE NON FANNO SIDE EFFECT*/
