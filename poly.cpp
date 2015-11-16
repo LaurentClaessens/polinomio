@@ -1,24 +1,14 @@
-polynom::iterator(smartp ptr) mono_ptr(ptr) { }; 
+#include "poly.h"
 
-polynom::iterator& operator++()  // ++itr 
-{
-    if (mono_ptr) mono_ptr=mono_ptr->next;
-    return *this;
+
+
+
+
+
+
+/*IMPLEMENTAZIONE FUNZIONI ESTERNE FRIEND*/
+std::ostream& polynom::operator<<(std::ostream&, const polynom& p) {
+    for(iteratore it = p.begin(); it != p.end(); ++it){
+        os<<      //IMPLEM MONOMIO
+    }
 }
-
-
-polynom::iterator operator++(int)   //itr++
-{
-    iterator aux=this;
-    ++this;
-    return aux;
-}
-
-polynom::polynom(int c)
-{
-    m=Monomio(c,0);
-    first=smartp(m);
-}
-
-polynom::begin() {return polynom::iterator(first);}
-
