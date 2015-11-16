@@ -25,14 +25,9 @@ class polynom{
 
     };
     /*COSTRUTTORI E DISTRUTTORI*/
-<<<<<<< HEAD
     polynom(smartp =0); //costruttore standard e a 1 parametro
     polynom(const smartp&); //costruttore di copia
-=======
-    polynom(smartp f=0); //costruttore standard e a 1 parametro
     polynom( int coef,int expo); 
-    polynom(const smartp &); //costruttore di copia
->>>>>>> c136b083941fb3bce0c25aefaa6285928525e4b9
     ~polynom(); //distruttore
     /*METODI COSTANTI (NO SIDE EFFECT)*/
     bool operator==(const polynom&) const; //ridefinizione uguaglianza
@@ -48,10 +43,3 @@ class polynom{
 
 
 };
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> c136b083941fb3bce0c25aefaa6285928525e4b9

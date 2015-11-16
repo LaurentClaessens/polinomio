@@ -1,4 +1,4 @@
-#include "poly.h";
+#include "poly.h"
 
 
 int main(int argc, char *argv[])
