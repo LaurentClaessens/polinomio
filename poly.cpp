@@ -1,8 +1,4 @@
 #include "poly.h"
-<<<<<<< HEAD
-
-/*IMPLEMENTO METODI RELATIVI ALLA CLASSE ITERATOR SULL'OGGETTO POLYNOM*/
-=======
 #include "monomio.h"
 
 polynomial::polynomial(int coef,int expo)

@@ -16,33 +16,18 @@ iterator& polynom::iterator::operator++(){ //++it
     return *this;
 }
 
-<<<<<<< HEAD
-bool polynom::iterator::operator==(iterator it){
+bool polynomial::iterator::operator==(iterator it){
     return first == it.index;  //non sicuro
 }
 
-bool polynom::iterator::operator!=(iterator it){
+bool polynomial::iterator::operator!=(iterator it){
     return !(first == it.index);
 }
-
-
-polynom::begin() const {
-    return polynom::iterator(first);
-=======
-bool polynomial::iterator::operator==(iterator it){
-    return
-}
-
-bool polynomial::iterator::operator!=(iterator it){
-
-}
-
 
 iterator polynomial::iterator::begin() const{
     iterator aux;
     aux.index = first;
     return aux;
->>>>>>> 46b30ea3792083fbb1cdb7d470279e54562f28df
 }
 
 iterator polynomial::iterator::end() const{
