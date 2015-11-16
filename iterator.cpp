@@ -7,27 +7,27 @@ iterator& operator++(); //postfisso
 
 
 
-bool polynom::iterator::operator==(iterator it){
+bool polynomial::iterator::operator==(iterator it){
     return
 }
 
-bool polynom::iterator::operator!=(iterator it){
+bool polynomial::iterator::operator!=(iterator it){
 
 }
 
 
-iterator polynom::iterator::begin() const{
+iterator polynomial::iterator::begin() const{
     iterator aux;
     aux.index = first;
     return aux;
 }
 
-iterator polynom::iterator::end() const{
+iterator polynomial::iterator::end() const{
     iterator aux;
     aux.index = 0;
     return aux;
 }
 
-polynom polynom::iterator::operator[](iterator it){
+polynomial polynomial::iterator::operator[](iterator it){
     return it.index->info; //non conosco l'interfaccia di Monomio ????????????????????????????????????????????
 }
