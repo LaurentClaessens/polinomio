@@ -14,10 +14,11 @@ class polynom
             private : 
                 smartp  mono_ptr;
             public 
+                iterator(smartp);
                 iterator& operator++(int);
         }
-        iterator
-
+        iterator begin();
+        iterator end();
 }
 
 #endif      // __POLY_H__
