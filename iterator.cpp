@@ -1,33 +1,41 @@
 #include "poly.h"
 
-/*IMPLEMENTO METODI RELATIVI ALLA CLASSE ITERATOR SULL'OGGETTO POLYNOM*/
+/*IMPLEMENTO METODI RELATIVI ALLA CLASSE ITERATOR SULL'OGGETTO POLYNOM********************************************************************/
 
-iterator operator++(int);
-iterator& operator++(); //postfisso
+Polynomial::iterator::iterator(smartp first) : index(first) {};
 
-
-
-bool polynomial::iterator::operator==(iterator it){
-    return
+polynomila::iterator Polynomial::iterator::operator++(int)   //it++
+{
+    iterator aux=this;
+    ++this;
+    return aux;
 }
 
-bool polynomial::iterator::operator!=(iterator it){
-
+iterator& Polynomial::iterator::operator++(){ //++it
+    if (index) index = index->next; //non sicuro
+    return *this;
 }
 
+bool Polynomial::iterator::operator==(iterator it){
+    return first == it.index;  //non sicuro
+}
 
-iterator polynomial::iterator::begin() const{
+bool Polynomial::iterator::operator!=(iterator it){
+    return !(first == it.index);
+}
+
+iterator Polynomial::iterator::begin() const{
     iterator aux;
     aux.index = first;
     return aux;
 }
 
-iterator polynomial::iterator::end() const{
+iterator Polynomial::iterator::end() const{
     iterator aux;
     aux.index = 0;
     return aux;
 }
 
-polynomial polynomial::iterator::operator[](iterator it){
-    return it.index->info; //non conosco l'interfaccia di Monomio ????????????????????????????????????????????
+Polynomial Polynomial::iterator::operator[](iterator it){
+    return it.index->info; //non conosco l'interfaccia di monomio ???????
 }
