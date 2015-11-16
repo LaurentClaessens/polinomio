@@ -1,49 +1,49 @@
 #include "poly.h"
 #include "monomio.h"
 
-polynomial::polynomial(int coef,int expo)
+Polynomial::Polynomial(int coef,int expo)
 {
     monomio* m_ptr = new monomio(coef,expo); 
     first=m_ptr;
 }
 
-polynomial::polynomial(smartp sp): first(sp){}
+Polynomial::Polynomial(smartp sp): first(sp){}
 
 /* About iterator */
 
 
-polynomial::iterator(smartp ptr) mono_ptr(ptr) { }; 
+Polynomial::iterator(smartp ptr) mono_ptr(ptr) { }; 
 
-polynomial::iterator& operator++()  // ++itr 
+Polynomial::iterator& operator++()  // ++itr 
 {
     if (mono_ptr) mono_ptr=mono_ptr->next;
     return *this;
 }
 
-polynomial::iterator operator++(int)   //itr++
+Polynomial::iterator operator++(int)   //itr++
 {
     iterator aux=this;
     ++this;
     return aux;
 }
 
-polynomial::polynomial(const int c)
+Polynomial::Polynomial(const int c)
 {
     m=monomio(c,0);
     first=smartp(m);
 }
 
-polynomial::iterator polynomial::begin() const {return polynomial::iterator(first);}
-polynomial::iterator polynomial::end() const 
+Polynomial::iterator Polynomial::begin() const {return Polynomial::iterator(first);}
+Polynomial::iterator Polynomial::end() const 
 {
-    polynomial::iterator aux;
+    Polynomial::iterator aux;
     aux.index=0;
     return aux;
 }
 
 /* Mathematical operations */
 
-polynomial polynomial::operator+(const polynomial& P)
+Polynomial Polynomial::operator+(const Polynomial& P)
     // return the sum of 'this' and P
 {
     // TODO

@@ -7,7 +7,7 @@ using std::endl;
 
 /*IN QUESTO CONTESTO POLYNOM E' UN CONTENITORE DI MONOMI (NODI), UNA SEMPLICE LISTA CONCATENATA*/
 
-class polynomial{
+class Polynomial{
     private:
         smartp first;
     public:
@@ -23,28 +23,28 @@ class polynomial{
                 bool operator!=(iterator it);
                 iterator begin() const;
                 iterator end() const;
-                polynomial operator[](iterator it);
+                Polynomial operator[](iterator it);
             };
         /*COSTRUTTORI E DISTRUTTORI*/
-        polynomial(smartp); //costruttore standard e a 1 parametro
-        polynomial(const int x);
-        polynomial(const smartp&); //costruttore di copia
-        polynomial( int coef,int expo); 
-        ~polynomial(); //distruttore
+        Polynomial(smartp); //costruttore standard e a 1 parametro
+        Polynomial(const int x);
+        Polynomial(const smartp&); //costruttore di copia
+        Polynomial( int coef,int expo); 
+        ~Polynomial(); //distruttore
 
 
         /* Mathematical operations */
-        polynomial operator+(const polynomial& P);
+        Polynomial operator+(const Polynomial& P);
 
         /*METODI COSTANTI (NO SIDE EFFECT)*/
-        bool operator==(const polynomial&) const; //ridefinizione uguaglianza
-        bool operator!=(const polynomial&) const; //ridefinizione disuguaglianza
-        bool operator<(const polynomial&) const; //ridefinizione maggiore (?non sicuro su segnatura)
-        bool operator>(const polynomial&) const; //ridefinizione minore
+        bool operator==(const Polynomial&) const; //ridefinizione uguaglianza
+        bool operator!=(const Polynomial&) const; //ridefinizione disuguaglianza
+        bool operator<(const Polynomial&) const; //ridefinizione maggiore (?non sicuro su segnatura)
+        bool operator>(const Polynomial&) const; //ridefinizione minore
         /*METODI NON COSTANTI (POSSIBILE SIDE EFFECT)*/
         smartp& operator=(const smartp&);
         /*FUNZIONI ESTERNE FRIEND*/
-        friend polynomial operator*(const polynomial&, const polynomial&); //ridefinizione operatore di moltiplicazione tra polinomi (?serve)
-        friend polynomial operator+(const polynomial&, const polynomial &); //ridefinizione operatore di somma tra polinomi (?serve)
-        friend ostream& operator<<(ostream&, const polynomial&); //ridefinizione ostream
+        friend Polynomial operator*(const Polynomial&, const Polynomial&); //ridefinizione operatore di moltiplicazione tra polinomi (?serve)
+        friend Polynomial operator+(const Polynomial&, const Polynomial &); //ridefinizione operatore di somma tra polinomi (?serve)
+        friend ostream& operator<<(ostream&, const Polynomial&); //ridefinizione ostream
 };

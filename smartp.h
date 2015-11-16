@@ -6,7 +6,7 @@ private:
     monomio *punt;
 public:
     /*COSTRUTTORI && DISTRUTTORE*/
-    smartp(lonomio *p=0); //costruttore a un parametro
+    smartp(monomio *p=0); //costruttore a un parametro
     smartp(const smartp&); //costruttore di copia
     smartp(const monomio*); //costruttore di copia
     ~smartp(); //distruttore
