@@ -1,3 +1,4 @@
+
 /*INCLUSIONE DELLA CLASSE DERIVATA IOSTREAM: IOS -> ISTREAM, OSTREAM -> IOSTREAM*/
 #include <iostream>
 using std::ostream;
@@ -31,7 +32,6 @@ class polynom{
 
 
 };
-
 
 
 
