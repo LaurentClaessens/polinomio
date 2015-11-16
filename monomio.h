@@ -2,14 +2,15 @@
 #define  __MONOMIO_H__
 
 #include "coefficiente.h"
+#include "grado.h"
 
 class monomio
 {
     private:
         Coefficiente coefficient;
-        Exponent exponent;
+        Grado grado;
     public:
-        monomio(int,int);
+        monomio(const int,const int);
 };
 
 #endif     // __MONOMIO_H__
