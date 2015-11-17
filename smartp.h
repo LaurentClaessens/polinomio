@@ -5,7 +5,7 @@
 
 class smartp {
 private:
-    Monomial *punt;
+    Monomial* pMonomial;
 public:
     /*COSTRUTTORI && DISTRUTTORE*/
     smartp(Monomial* p=0); //costruttore a un parametro
@@ -19,6 +19,10 @@ public:
     Monomial* operator->() const; //selezione di membro
     bool operator==(const smartp&) const; //uguaglianza
     bool operator!=(const smartp&) const; //disuguaglianza
+
+    //we do not implement the safe bool idiom.  http://www.artima.com/cppsource/safebool.html
+    bool is_valid();
+
 };
 
 #endif // SMARTP

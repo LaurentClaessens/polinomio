@@ -12,13 +12,11 @@ Polynomial::Polynomial(smartp sp): first(sp){}
 /* About iterator */
 
 
-
-
 Polynomial::iterator::iterator(smartp first) : punt(first) {};
 
 Polynomial::iterator& Polynomial::iterator::operator++()  // ++itr 
 {
-    if (punt) punt=punt->next;
+    if (punt.is_valid()) { punt=punt->next; }
     return *this;
 }
 

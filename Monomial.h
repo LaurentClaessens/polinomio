@@ -3,12 +3,10 @@
 #define MONOMIO_H_
 
 #include <iostream>
+#include "coefficiente.h"
+#include "grado.h"
+
 using std::ostream;
-
-#include "./coefficiente.h"
-#include "./grado.h"
-
-class smartp;
 
 class Monomial {
   Coefficiente c;
@@ -16,7 +14,7 @@ class Monomial {
 
  public:
   int riferimenti;
-  smartp* next;
+  smartp next;
 
   Monomial(int x = 0, int y = 0): c(x), g(y), riferimenti(0), next(0) { }
   Monomial(const Monomial&);

@@ -3,33 +3,33 @@
 /*DEFINIZIONE METODI E COSTRUTTORI DI SMARTP***********************************************************************************************/
 
 /*COSTRUTTORE*/
-smartp::smartp(Monomial *p) : punt(p) {
-    if (punt) //se ho assegnato a punt un Monomial/nodo valido:
-        punt->riferimenti++; //incremento riferimenti a nodo
+smartp::smartp(Monomial *p) : pMonomial(p) {
+    if (pMonomial) //se ho assegnato a pMonomial un Monomial/nodo valido:
+        pMonomial->riferimenti++; //incremento riferimenti a nodo
     //altrimenti ho inizializzato uno smartp nullo
 }
 
 /*COSTRUTTORE DI COPIA*/
-smartp::smartp(const smartp &s) : punt(s.punt){
-    if (punt) //se ho inizializzato uno smartp con uno smartp con punt non nullo
-        punt->riferimenti++; //incremento i riferimenti che puntano a quel punt
+smartp::smartp(const smartp &s) : pMonomial(s.pMonomial){
+    if (pMonomial) //se ho inizializzato uno smartp con uno smartp con pMonomial non nullo
+        pMonomial->riferimenti++; //incremento i riferimenti che pMonomialano a quel pMonomial
 }
 
 /*DISTRUTTORE*/
 smartp::~smartp(){
-    if (punt) { //se lo smartp punta a un punt non nullo
-        punt->riferimenti--; //decrementa i riferimenti a quel punt
-        if (punt->riferimenti==0) //se i riferimenti sono 0 non punta nessuno al punt
-            delete punt; //cancellalo
+    if (pMonomial) { //se lo smartp pMonomiala a un pMonomial non nullo
+        pMonomial->riferimenti--; //decrementa i riferimenti a quel pMonomial
+        if (pMonomial->riferimenti==0) //se i riferimenti sono 0 non pMonomiala nessuno al pMonomial
+            delete pMonomial; //cancellalo
     }
 }
 
 /*ASSEGNAZIONE*/
 smartp& smartp::operator=(const smartp& s){
     if (this != &s) {
-        Monomial *t = punt;
-        punt = s.punt;
-        if (punt) punt->riferimenti++;
+        Monomial *t = pMonomial;
+        pMonomial = s.pMonomial;
+        if (pMonomial) pMonomial->riferimenti++;
         if (t) {
             t->riferimenti--;
             if (t->riferimenti == 0) delete t;
@@ -38,22 +38,23 @@ smartp& smartp::operator=(const smartp& s){
     return *this;
 }
 
-/*OPERATORE DI DEREFERENZIAZIONE*/
+smartp::is_valid(){ 
+    if (pMonomial) return true;
+    return false;
+}
+
 Monomial& smartp::operator*() const{
-    return *punt; //*smartp = *punt ora;
+    return *pMonomial; //*smartp = *pMonomial ora;
 }
 
-/*OPERATORE DI SELEZIONE DI MEMBRO*/
 Monomial* smartp::operator->() const{
-    return punt; //smartp->membro = punt->membro ora;
+    return pMonomial; //smartp->membro = pMonomial->membro ora;
 }
 
-/*OPERATORE DI UGUAGLIANZA*/
 bool smartp::operator==(const smartp& p) const{
-    return punt==p.punt; //true se i due punt confrontati hanno lo stesso indirizzo in memoria;
+    return pMonomial==p.pMonomial; 
 }
 
-/*OPERATORE DI DISUGUAGLIANZA*/
 bool smartp::operator!=(const smartp& p) const{
-    return punt != p.punt; //true se i due punt confrontati hanno diversi indirizzi in memoria;
+    return !(pMonomial==p.pMonomial);
 }
