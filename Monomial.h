@@ -5,24 +5,25 @@
 #include <iostream>
 #include "coefficiente.h"
 #include "grado.h"
+#include "smartp.h"
 
 using std::ostream;
 
 class Monomial {
-  Coefficiente c;
-  Grado g;
+  Coefficiente coefficient;   // was c
+  Degree degree;   // was g
 
  public:
   int riferimenti;
   smartp next;
 
-  Monomial(int x = 0, int y = 0): c(x), g(y), riferimenti(0), next(0) { }
+  Monomial(int, int );
   Monomial(const Monomial&);
   Monomial& operator=(const Monomial&);
   Monomial operator*(const Monomial&) const;
 
   const Coefficiente& getCof() const;
-  const Grado& getGra() const;
+  const Degree& getGra() const;
 };
 
 ostream& operator<<(ostream& os, const Monomial& m);
