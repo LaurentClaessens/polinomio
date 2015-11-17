@@ -3,9 +3,6 @@
 #define MONOMIO_H_
 
 #include <iostream>
-#include "Coefficient.h"
-#include "Degree.h"
-#include "smartp.h"
 
 using std::ostream;
 
@@ -24,7 +21,7 @@ class Monomial {
   Monomial operator*(const Monomial&) const;
 
   Coefficient getCoefficient() const;
-  Degree getDegree() const;
+  int getDegree() const;
 };
 
 ostream& operator<<(ostream& os, const Monomial& m);

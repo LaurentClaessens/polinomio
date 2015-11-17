@@ -21,7 +21,7 @@ Monomial Monomial::operator*(const Monomial& m) const {
 }
 
 Coefficient Monomial::getCoefficient() const { return coefficient; }
-Degree Monomial::getDegree() const {  return degree; }
+int Monomial::getDegree() const {  return degree.getInt(); }
 
 ostream& operator<<(ostream& os, const Monomial& m) {
   os << "Il Monomial e' caratterizzato da  \n";

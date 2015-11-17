@@ -1,12 +1,9 @@
-#include "smartp.h"
 
 /*DEFINIZIONE METODI E COSTRUTTORI DI SMARTP***********************************************************************************************/
 
 /*COSTRUTTORE*/
 smartp::smartp(Monomial *p) : pMonomial(p) {
-    if (pMonomial) //se ho assegnato a pMonomial un Monomial/nodo valido:
-        pMonomial->riferimenti++; //incremento riferimenti a nodo
-    //altrimenti ho inizializzato uno smartp nullo
+    if (pMonomial) pMonomial->riferimenti++;
 }
 
 /*COSTRUTTORE DI COPIA*/

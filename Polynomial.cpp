@@ -58,7 +58,7 @@ Polynomial::iterator Polynomial::end() const
 
 /* Mathematical operations */
 
-int Polynomial::degree(){ return first->degree; }
+int Polynomial::degree(){ return first->getDegree(); }
 Polynomial Polynomial::operator+(const Polynomial& P)
     // return the sum of 'this' and P
 {

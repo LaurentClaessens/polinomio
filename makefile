@@ -10,7 +10,8 @@ coefficiente.o:coefficiente.cpp coefficiente.h
 	g++ -c coefficiente.cpp -o coefficiente.o
 smartp.o:smartp.cpp 
 	g++ -c smartp.cpp -o smartp.o
-laurent:laurent_test.cpp Polynomial.o
-	g++ laurent_test.cpp -o laurent  Polynomial.o
+
+laurent:laurent_test.cpp Polynomial.o Monomial.o smartp.o Degree.o Coefficient.o
+	g++ laurent_test.cpp -o laurent  Polynomial.o Monomial.o smartp.o Degree.o Coefficient.o
 coef_test:coef_test.cpp Coefficient.o
 	g++ coef_test.cpp -o coef_test   Coefficient.o

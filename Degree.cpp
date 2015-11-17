@@ -33,7 +33,7 @@ Degree Degree::operator+(const Degree& x) const
     return Degree( this->g+x.g );
 }
 
-int Degree::getDegree() const { return g; }
+int Degree::getInt() const { return g; }
 
 void Degree::setDegree(int x) {
   if (x > 0) {   // grado positivo
@@ -45,6 +45,6 @@ void Degree::setDegree(int x) {
 
 
 ostream& operator<<(ostream& os, const Degree& x ) {
-  os << "Il grado e'  " << x.getDegree() << '\n';
+  os << "Il grado e'  " << x.getInt() << '\n';
   return os;
 }
