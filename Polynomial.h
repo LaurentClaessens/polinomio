@@ -1,6 +1,5 @@
 /*INCLUSIONE DELLA CLASSE DERIVATA IOSTREAM: IOS -> ISTREAM, OSTREAM -> IOSTREAM*/
 #include <iostream>
-#include "smartp.h"
 #include "Monomial.h"
 #include "Coefficient.h"
 #include "Degree.h"
@@ -36,6 +35,26 @@ class Polynomial{
                 void make_zero();           // set pMonomial to NULL;
 
         };
+
+
+        class Monomial {
+            Coefficient coefficient;   // was c
+            Degree degree;   // was g
+
+            public:
+                int riferimenti;
+                smartp next;
+
+                Monomial(int, int );
+                Monomial(Coefficient, Degree );
+                Monomial(const Monomial&);
+                Monomial& operator=(const Monomial&);
+                Monomial operator*(const Monomial&) const;
+
+                Coefficient getCoefficient() const;
+                int getDegree() const;
+        };
+
 
     public:
         class iterator {
@@ -80,3 +99,5 @@ class Polynomial{
         //friend Polynomial operator+(const Polynomial&, const Polynomial &);
         //friend ostream& operator<<(ostream&, const Polynomial&); 
 };
+
+ostream& operator<<(ostream& os, const Monomial& m);
