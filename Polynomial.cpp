@@ -127,9 +127,8 @@ bool Polynomial::smartp::operator!=(const Polynomial::smartp& p) const{
 
 // In the following, 'next' will use its default constructor.
 Polynomial::Monomial::Monomial(int x, int y ): coefficient(x), degree(y), riferimenti(0) {  }
-
-
 Polynomial::Monomial::Monomial(const Polynomial::Monomial& m) : coefficient(m.getCoefficient()),degree(m.getDegree()),riferimenti(0) { }
+Polynomial::Monomial::Monomial(Coefficient x, Degree y ): coefficient(x), degree(y), riferimenti(0) {  }
 
 Polynomial::Monomial& Polynomial::Monomial::operator=(const Polynomial::Monomial& m) {
   if (this != &m) {

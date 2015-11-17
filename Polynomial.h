@@ -6,7 +6,6 @@
 using std::ostream;
 using std::endl;
 
-/*IN QUESTO CONTESTO POLYNOM E' UN CONTENITORE DI MONOMI (NODI), UNA SEMPLICE LISTA CONCATENATA*/
 
 class Polynomial{
     private:
@@ -45,7 +44,7 @@ class Polynomial{
                 smartp next;
 
                 Monomial(int, int );
-                Monomial(Coefficient, Degree );
+                Monomial(Coefficient, Degree);
                 Monomial(const Monomial&);
                 Monomial& operator=(const Monomial&);
                 Monomial operator*(const Monomial&) const;
@@ -89,17 +88,13 @@ class Polynomial{
         int degree();   // return the degree of the polynomial
         Polynomial operator+(const Polynomial& P);
 
-        bool operator==(const Polynomial&) const; //ridefinizione uguaglianza
-        bool operator!=(const Polynomial&) const; //ridefinizione disuguaglianza
+        bool operator==(const Polynomial&) const;
+        bool operator!=(const Polynomial&) const; 
         bool operator<(const Polynomial&) const; 
-        bool operator>(const Polynomial&) const; //ridefinizione minore
-
+        bool operator>(const Polynomial&) const;
 
         smartp& operator=(const smartp&);
 
-        //friend Polynomial operator*(const Polynomial&, const Polynomial&); 
-        //friend Polynomial operator+(const Polynomial&, const Polynomial &);
-        //friend ostream& operator<<(ostream&, const Polynomial&); 
     private :
-        smartp first;               // 'first' points to the *lowest* degree monomial.
+        smartp first;       // 'first' is the highest degree monomial.
 };
