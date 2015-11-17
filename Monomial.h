@@ -10,7 +10,7 @@ using std::ostream;
 
 class smartp;
 
-class Monomio {
+class Monomial {
   Coefficiente c;
   Grado g;
 
@@ -18,16 +18,16 @@ class Monomio {
   int riferimenti;
   smartp* next;
 
-  Monomio(int x = 0, int y = 0): c(x), g(y), riferimenti(0), next(0) { }
-  Monomio(const Monomio&);
-  Monomio& operator=(const Monomio&);
-  Monomio operator*(const Monomio&) const;
+  Monomial(int x = 0, int y = 0): c(x), g(y), riferimenti(0), next(0) { }
+  Monomial(const Monomial&);
+  Monomial& operator=(const Monomial&);
+  Monomial operator*(const Monomial&) const;
 
   const Coefficiente& getCof() const;
   const Grado& getGra() const;
 };
 
-ostream& operator<<(ostream& os, const Monomio& m);
+ostream& operator<<(ostream& os, const Monomial& m);
 
 
 
