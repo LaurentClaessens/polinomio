@@ -25,10 +25,10 @@ public:
   bool operator>= (const Coefficiente&) const;
 
 
-  Coefficiente& operator+  (const Coefficiente&);
-  Coefficiente& operator-  (const Coefficiente&);
-  Coefficiente& operator*  (const Coefficiente&);
-  Coefficiente& operator/  (const Coefficiente&);
+  Coefficiente operator+  (const Coefficiente&);
+  Coefficiente operator-  (const Coefficiente&);
+  Coefficiente operator*  (const Coefficiente&);
+  Coefficiente operator/  (const Coefficiente&);
 
    int getCoefficiente() const;
    void setCoefficiente(int );

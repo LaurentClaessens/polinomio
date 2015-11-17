@@ -1,5 +1,5 @@
 // Copyright 2015 Andrey Petrov
-#include "./grado.h"
+#include "Degree.h"
 
 
 bool Degree::isPositive() const {
@@ -26,6 +26,13 @@ Degree& Degree::operator=(const Degree& x) {
     }
     return *this;
   }
+}
+
+Degree& Degree::operator+(const Degree& x) 
+{
+    degree=thi
+    Degree aux=Degree( this->g+x.g );
+    return aux;
 }
 
 int Degree::getDegree() const { return g; }

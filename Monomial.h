@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "coefficiente.h"
-#include "grado.h"
+#include "Degree.h"
 #include "smartp.h"
 
 using std::ostream;

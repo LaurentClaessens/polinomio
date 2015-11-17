@@ -40,22 +40,21 @@ bool Coefficiente::operator>=(const Coefficiente& C ) const {
 
 
 /*Operatori operazionali interni*/
-Coefficiente&  Coefficiente::operator+(const Coefficiente& C) {
-   c = c + C.c;
-   return *this;
+Coefficiente  Coefficiente::operator+(const Coefficiente& C) {
+   return Coefficiente( this->c+C.c );
  }
 
-Coefficiente& Coefficiente::operator-(const Coefficiente& C) {
+Coefficiente Coefficiente::operator-(const Coefficiente& C) {
   c = c - C.c;
   return *this;
  }
 
-Coefficiente& Coefficiente::operator*(const Coefficiente& C ) {
+Coefficiente Coefficiente::operator*(const Coefficiente& C ) {
   c = c * C.c;
   return *this;
  }
 
-Coefficiente& Coefficiente::operator/(const Coefficiente& C) {
+Coefficiente Coefficiente::operator/(const Coefficiente& C) {
     if (C.c != 0 && c%C.c == 0)
       c = c / C.c;
     else 
@@ -100,26 +99,6 @@ int Coefficiente::getCoefficiente() const {
  bool operator>= (const Coefficiente& a, const Coefficiente& b) {
    return !(a.operator<(b));
  }
-
-
-
-/*Opearatori operazioni esterni*/
-const Coefficiente& operator+ (const Coefficiente& a, const Coefficiente& b) {
-  return a + b;
-}
-
-const Coefficiente& operator- (const Coefficiente& a, const Coefficiente& b) {
-return a - b;
-}
-
-const Coefficiente& operator/ (const Coefficiente& a, const Coefficiente& b) {
-return a / b;
-}
-
-const Coefficiente& operator* (const Coefficiente& a, const Coefficiente& b) {
-return a * b;
-}
-
 
 ostream& operator<<(ostream& os, const Coefficiente& C) {
   os << "il valore del Coefficiente e'  "  << C.getCoefficiente() << ' ';

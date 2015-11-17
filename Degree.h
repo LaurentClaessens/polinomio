@@ -1,5 +1,7 @@
 #ifndef GRADO_H
 #define GRADO_H
+
+
 #include <iostream>
 using std::ostream;
 using std::cout;
@@ -17,6 +19,7 @@ public:
 
 
   Degree& operator=(const Degree&);
+  Degree& operator+(const Degree&);
 
   int getDegree() const;
   void setDegree(int x);

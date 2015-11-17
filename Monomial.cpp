@@ -3,34 +3,34 @@
 
 
 // In the following, 'next' will use its default constructor.
-Monomial::Monomial(const int x, const int y ): c(x), g(y), riferimenti(0) {  }
+Monomial::Monomial(const int x, const int y ): coefficient(x), degree(y), riferimenti(0) {  }
 
 Monomial::Monomial(const Monomial& m) {
   if (this != &m) {
-    c = m.getCof();
-    g = m.getGra();
+    coefficient = m.getCof();
+    degree = m.getGra();
   }
 }
 
 Monomial& Monomial::operator=(const Monomial& m) {
   if (this != &m) {
-    c = m.c;
-    g = m.g;
+    coefficient = m.coefficient;
+    degree = m.degree;
   } return *this;
 }
 
 Monomial Monomial::operator*(const Monomial& m) const {
-  return Monomial(c * m.c, g + m.g );
+  return Monomial(coefficient * m.coefficient, degree + m.degree );
 }
 
-const Coefficiente& Monomial::getCoefficient() const { return c; }
+const Coefficiente& Monomial::getCoefficient() const { return coefficient; }
 
-const Degree& MOnomial::getDegree() const {  return g; }
+const Degree& MOnomial::getDegree() const {  return degree; }
 
 ostream& operator<<(ostream& os, const Monomial& m) {
   os << "Il Monomial e' caratterizzato da  \n";
   os << "Coefficiente c= "<< (m.getCof()).getCoefficiente() << '\n';
-  os << "Degree g= "<< (g.getGra()).getDegree() << '\n';
+  os << "Degree degree= "<< (degree.getGra()).getDegree() << '\n';
   os << " Riferimenti r = " << riferimenti << '\n';
   return os;
 }
