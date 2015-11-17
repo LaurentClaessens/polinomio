@@ -30,7 +30,7 @@ public:
   Coefficient operator*  (const Coefficient&) const;
   Coefficient operator/  (const Coefficient&) const;
 
-   int getCoefficient() const;
+   int getInt() const;
    void setCoefficient(int );
 };
 

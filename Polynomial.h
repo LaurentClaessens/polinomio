@@ -50,7 +50,7 @@ class Polynomial{
                 Monomial& operator=(const Monomial&);
                 Monomial operator*(const Monomial&) const;
 
-                Coefficient getCoefficient() const;
+                int getCoefficient() const;
                 int getDegree() const;
         };
 
@@ -74,7 +74,10 @@ class Polynomial{
         Polynomial(const int x);
         Polynomial(const smartp&); //costruttore di copia
         Polynomial( int coef,int expo); 
-        ~Polynomial(); //distruttore
+
+        // No destructor for Polynomial because the default destructor deletes 
+        // the 'first' field which is a smart pointer which will delete the next.
+        //~Polynomial();
 
 
         /*About iterator*/

@@ -66,7 +66,7 @@ Polynomial Polynomial::operator+(const Polynomial& P)
     // TODO
 }
 
-/*DEFINIZIONE METODI E COSTRUTTORI DI SMARTP***********************************************************************************************/
+/*DEFINIZIONE METODI E COSTRUTTORI DI SMARTP*/
 
 /*COSTRUTTORE*/
 Polynomial::smartp::smartp(Polynomial::Monomial *p) : pMonomial(p) {
@@ -83,8 +83,8 @@ Polynomial::smartp::smartp(const Polynomial::smartp &s) : pMonomial(s.pMonomial)
 Polynomial::smartp::~smartp(){
     if (pMonomial) { //se lo smartp pMonomiala a un pMonomial non nullo
         pMonomial->riferimenti--; //decrementa i riferimenti a quel pMonomial
-        if (pMonomial->riferimenti==0) //se i riferimenti sono 0 non pMonomiala nessuno al pMonomial
-            delete pMonomial; //cancellalo
+        if (pMonomial->riferimenti==0) 
+            delete pMonomial; 
     }
 }
 
@@ -142,9 +142,13 @@ Polynomial::Monomial Polynomial::Monomial::operator*(const Polynomial::Monomial&
   return Polynomial::Monomial(coefficient * m.coefficient, degree + m.degree );
 }
 
-Coefficient Polynomial::Monomial::getCoefficient() const { return coefficient; }
+int Polynomial::Monomial::getCoefficient() const { return coefficient.getInt(); }
 int Polynomial::Monomial::getDegree() const {  return degree.getInt(); }
 
+//
+//
+//  'Monomial' is private in Polynomial. It seem difficult/unnecessary to have a << operator on 'Monomial'.
+//
 //ostream& operator<<(ostream& os, const Polynomial::Monomial& m) {
 //  os << "Il Monomial e' caratterizzato da  \n";
 //  os << "Coefficient c= "<< m.getCoefficient() << '\n';

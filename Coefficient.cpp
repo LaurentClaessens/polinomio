@@ -64,13 +64,9 @@ Coefficient Coefficient::operator/(const Coefficient& C) const
 
 
 /*Getters and Setters*/
-int Coefficient::getCoefficient() const {
-   return c;
- }
+int Coefficient::getInt() const { return c; }
 
- void Coefficient::setCoefficient(int x) {
-   c = x;
- }
+void Coefficient::setCoefficient(int x) { c = x; }
 
 
 
@@ -101,6 +97,6 @@ int Coefficient::getCoefficient() const {
  }
 
 ostream& operator<<(ostream& os, const Coefficient& C) {
-  os << "il valore del Coefficient e'  "  << C.getCoefficient() << ' ';
+  os << "il valore del Coefficient e'  "  << C.getInt() << ' ';
   return os;
 }
