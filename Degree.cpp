@@ -28,11 +28,9 @@ Degree& Degree::operator=(const Degree& x) {
   }
 }
 
-Degree& Degree::operator+(const Degree& x) 
+Degree Degree::operator+(const Degree& x) const
 {
-    degree=thi
-    Degree aux=Degree( this->g+x.g );
-    return aux;
+    return Degree( this->g+x.g );
 }
 
 int Degree::getDegree() const { return g; }

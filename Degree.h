@@ -19,7 +19,7 @@ public:
 
 
   Degree& operator=(const Degree&);
-  Degree& operator+(const Degree&);
+  Degree operator+(const Degree&) const;
 
   int getDegree() const;
   void setDegree(int x);

@@ -23,13 +23,13 @@ Monomial Monomial::operator*(const Monomial& m) const {
   return Monomial(coefficient * m.coefficient, degree + m.degree );
 }
 
-const Coefficiente& Monomial::getCoefficient() const { return coefficient; }
+const Coefficient& Monomial::getCoefficient() const { return coefficient; }
 
 const Degree& MOnomial::getDegree() const {  return degree; }
 
 ostream& operator<<(ostream& os, const Monomial& m) {
   os << "Il Monomial e' caratterizzato da  \n";
-  os << "Coefficiente c= "<< (m.getCof()).getCoefficiente() << '\n';
+  os << "Coefficient c= "<< (m.getCof()).getCoefficient() << '\n';
   os << "Degree degree= "<< (degree.getGra()).getDegree() << '\n';
   os << " Riferimenti r = " << riferimenti << '\n';
   return os;

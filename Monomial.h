@@ -10,7 +10,7 @@
 using std::ostream;
 
 class Monomial {
-  Coefficiente coefficient;   // was c
+  Coefficient coefficient;   // was c
   Degree degree;   // was g
 
  public:
@@ -22,7 +22,7 @@ class Monomial {
   Monomial& operator=(const Monomial&);
   Monomial operator*(const Monomial&) const;
 
-  const Coefficiente& getCof() const;
+  const Coefficient& getCof() const;
   const Degree& getGra() const;
 };
 
