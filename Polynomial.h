@@ -25,12 +25,13 @@ class Polynomial{
 
                 smartp& operator=(const smartp&); //assegnazione
 
-                Monomial& operator*() const; //dereferenziazione
-                Monomial* operator->() const; //selezione di membro
-                bool operator==(const smartp&) const; //uguaglianza
-                bool operator!=(const smartp&) const; //disuguaglianza
+                Monomial& operator*() const;
+                Monomial* operator->() const;
+                bool operator==(const smartp&) const;
+                bool operator!=(const smartp&) const; 
 
-                //we do not implement the safe bool idiom.  http://www.artima.com/cppsource/safebool.html
+                // we do not implement the safe bool idiom.  
+                // http://www.artima.com/cppsource/safebool.html
                 bool is_valid();
                 void make_zero();           // set pMonomial to NULL;
         };
@@ -99,5 +100,3 @@ class Polynomial{
     private :
         smartp first;               // 'first' points to the *lowest* degree monomial.
 };
-
-ostream& operator<<(ostream& os, const Polynomial::Monomial& m);
