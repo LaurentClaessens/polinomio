@@ -56,30 +56,36 @@ Polynomial::iterator Polynomial::end() const
     return aux;
 }
 
+Monomial Polynomial::highest_monomial() {return *first;}
+Polynomial Polynomial::lower_polynomial() 
+{
+    if (first.is_valid()) 
+    {
+         if (first->getDegree() == 0)  { return 0 }
+         if (first->next.is_valid) { return Polynomial(first->next); }
+         return 0;
+    }
+    return 0;
+}
 
 /* Mathematical operations */
 
 int Polynomial::degree(){ return first->getDegree(); }
-Polynomial Polynomial::operator+(const Polynomial& P)
-    // return the sum of 'this' and P
-{
-    // TODO
-}
+
+
+
 
 /*DEFINIZIONE METODI E COSTRUTTORI DI SMARTP*/
 
-/*COSTRUTTORE*/
 Polynomial::smartp::smartp(Polynomial::Monomial *p) : pMonomial(p) {
     if (pMonomial) pMonomial->riferimenti++;
 }
 
-/*COSTRUTTORE DI COPIA*/
 Polynomial::smartp::smartp(const Polynomial::smartp &s) : pMonomial(s.pMonomial){
     if (pMonomial) //se ho inizializzato uno smartp con uno smartp con pMonomial non nullo
         pMonomial->riferimenti++; //incremento i riferimenti che pMonomialano a quel pMonomial
 }
 
-/*DISTRUTTORE*/
 Polynomial::smartp::~smartp(){
     if (pMonomial) { //se lo smartp pMonomiala a un pMonomial non nullo
         pMonomial->riferimenti--; //decrementa i riferimenti a quel pMonomial
@@ -88,7 +94,6 @@ Polynomial::smartp::~smartp(){
     }
 }
 
-/*ASSEGNAZIONE*/
 Polynomial::smartp& Polynomial::smartp::operator=(const Polynomial::smartp& s){
     if (this != &s) {
         Polynomial::Monomial *t = pMonomial;
@@ -102,12 +107,18 @@ Polynomial::smartp& Polynomial::smartp::operator=(const Polynomial::smartp& s){
     return *this;
 }
 
+
+
+
+
 bool Polynomial::smartp::is_valid(){ 
     if (pMonomial) return true;
     return false;
 }
-
 void Polynomial::smartp::make_zero() { pMonomial=0; }
+
+
+
 
 Polynomial::Monomial& Polynomial::smartp::operator*() const{
     return *pMonomial; 

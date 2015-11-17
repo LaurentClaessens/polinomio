@@ -53,6 +53,14 @@ class Polynomial{
                 int getDegree() const;
         };
 
+        Monomial highest_monomial();        // return the highest degree monomial;
+        Polynomial lower_polynomial();      // return the remaining polynomial when 
+                                            // the highest degree monomial is extracted.
+                // We have the invariant "highest_monomial+lower_polynomial=this".
+                // EXAMPLE : 
+                // With P = 3x^5 + 6x^2 + 5
+                // P.highest_monomial is 3x^5
+                // P.lower_polynomial is 6x^2 + 5
 
     public:
         class iterator {
@@ -68,10 +76,10 @@ class Polynomial{
                 bool operator!=(const iterator it);
 
             };
-        /*COSTRUTTORI E DISTRUTTORI*/
-        Polynomial(smartp); //costruttore standard e a 1 parametro
+
+        Polynomial(smartp);
         Polynomial(const int x);
-        Polynomial(const smartp&); //costruttore di copia
+        Polynomial(const smartp&);
         Polynomial( int coef,int expo); 
 
         // No destructor for Polynomial because the default destructor deletes 
@@ -83,6 +91,7 @@ class Polynomial{
         iterator begin() const;
         iterator end() const;
         Monomial& operator[](const iterator it) const; 
+
 
         /* Mathematical operations */
         int degree();   // return the degree of the polynomial
