@@ -12,11 +12,52 @@ Polynomial::Polynomial(smartp sp): first(sp){}
 /* About iterator */
 
 
-Polynomial::iterator(smartp ptr) mono_ptr(ptr) { }; 
+
+
+Polynomial::iterator::iterator(smartp first) : punt(first) {};
+
+polynomila::iterator Polynomial::iterator::operator++(int)   //it++
+{
+    iterator aux=this;
+    ++this;
+    return aux;
+}
+
+iterator& Polynomial::iterator::operator++(){ //++it
+    if (punt) punt = punt->next; //non sicuro
+    return *this;
+}
+
+bool Polynomial::iterator::operator==(iterator it){
+    return first == it.punt;  //non sicuro
+}
+
+bool Polynomial::iterator::operator!=(iterator it){
+    return !(first == it.punt);
+}
+
+iterator Polynomial::iterator::begin() const{
+    iterator aux;
+    aux.punt = first;
+    return aux;
+}
+
+iterator Polynomial::iterator::end() const{
+    iterator aux;
+    aux.punt = 0;
+    return aux;
+}
+
+Polynomial Polynomial::iterator::operator[](iterator it){
+    return it.punt->info; //non conosco l'interfaccia di Monomio ???????
+}
+
+
+Polynomial::iterator(smartp first): punt(first) { }; 
 
 Polynomial::iterator& operator++()  // ++itr 
 {
-    if (mono_ptr) mono_ptr=mono_ptr->next;
+    if (punt) punt=punt->next;
     return *this;
 }
 
@@ -37,7 +78,7 @@ Polynomial::iterator Polynomial::begin() const {return Polynomial::iterator(firs
 Polynomial::iterator Polynomial::end() const 
 {
     Polynomial::iterator aux;
-    aux.index=0;
+    aux.punt=0;
     return aux;
 }
 

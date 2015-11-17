@@ -13,7 +13,7 @@ class Polynomial{
     public:
         class iterator {
             private:
-                smartp index;
+                smartp punt;
             public:
                 /*notare la sottile differenza tra increment prefisso e postfisso*/
                 iterator(smartp first);

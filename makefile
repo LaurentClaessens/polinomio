@@ -7,3 +7,5 @@ monomio.o:monomio.cpp  grado.o
 grado.o:grado.cpp 
 	g++ -c grado.cpp -o grado.o
 
+laurent:laurent_test.cpp poly.o
+	g++ laurent_test.cpp -o laurent  poly.o
