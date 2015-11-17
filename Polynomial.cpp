@@ -1,4 +1,4 @@
-#include "poly.h"
+#include "Polynomial.h"
 #include "Monomial.h"
 
 Polynomial::Polynomial(int coef,int expo)
@@ -22,8 +22,8 @@ Polynomial::iterator& Polynomial::iterator::operator++()  // ++itr
 
 Polynomial::iterator Polynomial::iterator::operator++(int)   //it++
 {
-    iterator aux=this;
-    ++this;
+    iterator aux=*this;
+    ++(*this);
     return aux;
 }
 

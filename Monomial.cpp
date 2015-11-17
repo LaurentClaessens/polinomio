@@ -1,16 +1,13 @@
 // Copyright 2015 Andrey Petrov
-#include "./Monomial.h"
+#include "Monomial.h"
 
 
 // In the following, 'next' will use its default constructor.
-Monomial::Monomial(const int x, const int y ): coefficient(x), degree(y), riferimenti(0) {  }
+Monomial::Monomial(int x, int y ): coefficient(x), degree(y), riferimenti(0) {  }
+//Monomial::Monomial(Coefficent x, Degree y ): coefficient(x), degree(y), riferimenti(0) {  }
 
-Monomial::Monomial(const Monomial& m) {
-  if (this != &m) {
-    coefficient = m.getCof();
-    degree = m.getGra();
-  }
-}
+
+Monomial::Monomial(const Monomial& m) : coefficient(m.getCoefficient()),degree(m.getDegree()),riferimenti(0) { }
 
 Monomial& Monomial::operator=(const Monomial& m) {
   if (this != &m) {
@@ -23,14 +20,13 @@ Monomial Monomial::operator*(const Monomial& m) const {
   return Monomial(coefficient * m.coefficient, degree + m.degree );
 }
 
-const Coefficient& Monomial::getCoefficient() const { return coefficient; }
-
-const Degree& MOnomial::getDegree() const {  return degree; }
+Coefficient Monomial::getCoefficient() const { return coefficient; }
+Degree Monomial::getDegree() const {  return degree; }
 
 ostream& operator<<(ostream& os, const Monomial& m) {
   os << "Il Monomial e' caratterizzato da  \n";
-  os << "Coefficient c= "<< (m.getCof()).getCoefficient() << '\n';
-  os << "Degree degree= "<< (degree.getGra()).getDegree() << '\n';
-  os << " Riferimenti r = " << riferimenti << '\n';
+  os << "Coefficient c= "<< m.getCoefficient() << '\n';
+  os << "Degree degree= "<< m.getDegree() << '\n';
+  os << " Riferimenti r = " << m.riferimenti << '\n';
   return os;
 }

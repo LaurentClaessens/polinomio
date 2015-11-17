@@ -9,7 +9,7 @@ using std::endl;
 
 class Polynomial{
     private:
-        smartp first;               // 'first' points to the *highest* degree monomial.
+        smartp first;               // 'first' points to the *lowest* degree monomial.
     public:
         class iterator {
             private:

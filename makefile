@@ -12,5 +12,5 @@ smartp.o:smartp.cpp
 	g++ -c smartp.cpp -o smartp.o
 laurent:laurent_test.cpp Polynomial.o
 	g++ laurent_test.cpp -o laurent  Polynomial.o
-coef_test:coef_test.cpp coefficiente.o
-	g++ coef_test.cpp -o coef_test   coefficiente.o
+coef_test:coef_test.cpp Coefficient.o
+	g++ coef_test.cpp -o coef_test   Coefficient.o

@@ -1,6 +1,6 @@
 // Copyright 2015, Andrey Petrov
 
-#include "coefficiente.h"
+#include "Coefficient.h"
 #include  <string>
 
 
