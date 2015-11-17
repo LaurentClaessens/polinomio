@@ -1,6 +1,5 @@
 /*INCLUSIONE DELLA CLASSE DERIVATA IOSTREAM: IOS -> ISTREAM, OSTREAM -> IOSTREAM*/
 #include <iostream>
-#include "Monomial.h"
 #include "Coefficient.h"
 #include "Degree.h"
 
@@ -11,7 +10,8 @@ using std::endl;
 
 class Polynomial{
     private:
-        smartp first;               // 'first' points to the *lowest* degree monomial.
+
+        class Monomial;
         class smartp {
             private:
                 Monomial* pMonomial;
@@ -33,9 +33,7 @@ class Polynomial{
                 //we do not implement the safe bool idiom.  http://www.artima.com/cppsource/safebool.html
                 bool is_valid();
                 void make_zero();           // set pMonomial to NULL;
-
         };
-
 
         class Monomial {
             Coefficient coefficient;   // was c
@@ -98,6 +96,8 @@ class Polynomial{
         //friend Polynomial operator*(const Polynomial&, const Polynomial&); 
         //friend Polynomial operator+(const Polynomial&, const Polynomial &);
         //friend ostream& operator<<(ostream&, const Polynomial&); 
+    private :
+        smartp first;               // 'first' points to the *lowest* degree monomial.
 };
 
-ostream& operator<<(ostream& os, const Monomial& m);
+ostream& operator<<(ostream& os, const Polynomial::Monomial& m);

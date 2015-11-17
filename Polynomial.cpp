@@ -1,5 +1,4 @@
 #include "Polynomial.h"
-#include "Monomial.h"
 #include "Coefficient.h"
 #include "Degree.h"
 
