@@ -1,7 +1,7 @@
 #ifndef SMARTP
 #define SMARTP
 
-#include "Monomial.h"
+class Monomial;
 
 class smartp {
 private:
