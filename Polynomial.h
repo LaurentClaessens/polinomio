@@ -12,18 +12,17 @@ class Polynomial{
         smartp first;               // 'first' points to the *lowest* degree monomial.
     public:
         class iterator {
+            friend class Polynomial;
             private:
                 smartp punt;
             public:
-                /*notare la sottile differenza tra increment prefisso e postfisso*/
-                iterator(smartp first);
-                iterator operator++(int); //prefisso
-                iterator& operator++(); //postfisso
-                bool operator==(iterator it);
-                bool operator!=(iterator it);
-                iterator begin() const;
-                iterator end() const;
-                Polynomial operator[](iterator it);
+                iterator();
+                iterator(smartp);       // No default value, see the 'sage bool idiom'
+                iterator operator++(int);     // sp++
+                iterator& operator++();         // ++sp
+                bool operator==(const iterator it) const;
+                bool operator!=(const iterator it);
+
             };
         /*COSTRUTTORI E DISTRUTTORI*/
         Polynomial(smartp); //costruttore standard e a 1 parametro
@@ -33,19 +32,24 @@ class Polynomial{
         ~Polynomial(); //distruttore
 
 
+        /*About iterator*/
+        iterator begin() const;
+        iterator end() const;
+        Monomial& operator[](const iterator it) const; 
+
         /* Mathematical operations */
         int degree();   // return the degree of the polynomial
         Polynomial operator+(const Polynomial& P);
 
-        /*METODI COSTANTI (NO SIDE EFFECT)*/
         bool operator==(const Polynomial&) const; //ridefinizione uguaglianza
         bool operator!=(const Polynomial&) const; //ridefinizione disuguaglianza
-        bool operator<(const Polynomial&) const; //ridefinizione maggiore (?non sicuro su segnatura)
+        bool operator<(const Polynomial&) const; 
         bool operator>(const Polynomial&) const; //ridefinizione minore
-        /*METODI NON COSTANTI (POSSIBILE SIDE EFFECT)*/
+
+
         smartp& operator=(const smartp&);
-        /*FUNZIONI ESTERNE FRIEND*/
-        friend Polynomial operator*(const Polynomial&, const Polynomial&); //ridefinizione operatore di moltiplicazione tra polinomi (?serve)
-        friend Polynomial operator+(const Polynomial&, const Polynomial &); //ridefinizione operatore di somma tra polinomi (?serve)
-        friend ostream& operator<<(ostream&, const Polynomial&); //ridefinizione ostream
+
+        //friend Polynomial operator*(const Polynomial&, const Polynomial&); 
+        //friend Polynomial operator+(const Polynomial&, const Polynomial &);
+        //friend ostream& operator<<(ostream&, const Polynomial&); 
 };

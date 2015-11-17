@@ -23,6 +23,7 @@ public:
 
     //we do not implement the safe bool idiom.  http://www.artima.com/cppsource/safebool.html
     bool is_valid();
+    void make_zero();           // set pMonomial to NULL;
 
 };
 

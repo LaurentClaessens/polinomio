@@ -43,6 +43,8 @@ smartp::is_valid(){
     return false;
 }
 
+void smartp::make_zero() { pMonomial=0; }
+
 Monomial& smartp::operator*() const{
     return *pMonomial; //*smartp = *pMonomial ora;
 }

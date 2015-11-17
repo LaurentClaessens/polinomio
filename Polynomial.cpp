@@ -1,7 +1,7 @@
 #include "Polynomial.h"
 #include "Monomial.h"
 
-Polynomial::Polynomial(int coef,int expo)
+Polynomial::Polynomial(int coef,int expo=0)
 {
     Monomial* m_ptr = new Monomial(coef,expo); 
     first=m_ptr;
@@ -13,6 +13,10 @@ Polynomial::Polynomial(smartp sp): first(sp){}
 
 
 Polynomial::iterator::iterator(smartp first) : punt(first) {};
+Polynomial::iterator::iterator()  
+{
+    punt.make_zero();
+};
 
 Polynomial::iterator& Polynomial::iterator::operator++()  // ++itr 
 {
@@ -27,50 +31,34 @@ Polynomial::iterator Polynomial::iterator::operator++(int)   //it++
     return aux;
 }
 
-bool Polynomial::iterator::operator==(iterator it){
-    return first == it.punt;  //non sicuro
+bool Polynomial::iterator::operator==(const iterator it) const
+{
+    return punt == it.punt;  //non sicuro
 }
 
 bool Polynomial::iterator::operator!=(iterator it){
-    return !(first == it.punt);
+    return !(punt == it.punt);
 }
 
-iterator Polynomial::iterator::begin() const{
-    iterator aux;
-    aux.punt = first;
-    return aux;
-}
-
-iterator Polynomial::iterator::end() const{
-    iterator aux;
-    aux.punt = 0;
-    return aux;
-}
-
-Polynomial Polynomial::iterator::operator[](iterator it){
-    return it.punt->info; //non conosco l'interfaccia di Monomial ???????
-}
-
-
-Polynomial::iterator(smartp first): punt(first) { }; 
-
-Polynomial::Polynomial(const int c)
+Monomial& Polynomial::operator[](const iterator it) const
 {
-    m=Monomial(c,0);
-    first=smartp(m);
+    return *(it.punt);
 }
+
 
 Polynomial::iterator Polynomial::begin() const {return Polynomial::iterator(first);}
+
 Polynomial::iterator Polynomial::end() const 
 {
     Polynomial::iterator aux;
-    aux.punt=0;
+    aux.punt.make_zero();
     return aux;
 }
 
+
 /* Mathematical operations */
 
-int Polynomial::degree(){ return first->grado; }
+int Polynomial::degree(){ return first->degree; }
 Polynomial Polynomial::operator+(const Polynomial& P)
     // return the sum of 'this' and P
 {
